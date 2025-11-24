@@ -1,4 +1,4 @@
-<!-- Round  -->
+
 
 
 # SBA 6, TypeScript and Advanced JavaScript
@@ -9,7 +9,9 @@ In this SBA,
 
 
 ## Running the program
-To view this SBA, <!-- type "node dist/main.js" in the console -->
+To view this SBA, run dist/main.js
+<br>
+
 <br>
 
 ## Reflection Questions
@@ -20,8 +22,13 @@ T
 
 > The challenges you encountered and how you overcame them.
 
-Returning tax cal
-I
+Returning tax or discount calculation to 2 decimals. By using TypeScript, I specified the return must be a number. The .toFixed(2) method returns a string, and required a parseFloat() wrapper to return the expected data type. 
+<br>
+
+Accessing the object data from the API. Tried accessing using res.json(), switched to using .then (data=>{...})
+<br>
+
+Tax amount after discount. Changed taxCalculator.ts to handle discounted prices instead of full price.
 <br>
 
 > How you handled asynchronous operations and error management.

@@ -1,3 +1,5 @@
+import { NetworkError } from "../utils/errorHandler.js"
+import { DataError } from "../utils/errorHandler.js"
 
 let fetchProductData = async () => {
     return new Promise((resolve, reject) => {
@@ -12,7 +14,9 @@ let fetchProductData = async () => {
 
         }
         catch (error) {
-            reject(error)
+            if (error instanceof NetworkError) {
+                reject()
+            }
         }
     })
 }

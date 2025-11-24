@@ -1,7 +1,6 @@
-
+import { calculateDiscount } from "../utils/discountCalculator.js";
 
 export class Product {
-
     id: number;
     title: string;
     description: string;
@@ -22,7 +21,7 @@ export class Product {
     // meta: object;
     // images: [];
     // thumbnail: string;
-    
+
     constructor(id: number, title: string, description: string, category: string, price: number, discountPercentage: number, sku: string) {
         this.id = NaN;
         this.title = 'NaN';
@@ -34,11 +33,24 @@ export class Product {
     }
 
     displayDetails() {
-
+        console.log(`
+            Item: ${this.title}
+            Item ID: ${this.id}
+            Item SKU: ${this.sku}
+            Description: ${this.description}
+            Category: ${this.category}
+            Retail Price ($): ${this.price}
+            Your Price: $${this.getPriceWithDiscount()}(-${this.discountPercentage}%)
+            Your Savings: $${this.price-this.getPriceWithDiscount()}
+            Tax: $${}
+            Final Price: $${}
+            `)
     }
 
     getPriceWithDiscount() {
-
+        return this.price - calculateDiscount(this)
     }
+
+    
 }
 
