@@ -5,6 +5,11 @@ let fetchProductData = async () => {
             // get the data
             // response.ok conditional check
             // resolve() the data if ok
+
+            // fetch('https://dummyjson.com/products')
+            // .then(res => res.json())
+            // .then(console.log);
+
         }
         catch (error) {
             reject(error)
@@ -13,6 +18,3 @@ let fetchProductData = async () => {
 }
 
 
-// fetch('https://dummyjson.com/products')
-// .then(res => res.json())
-// .then(console.log);
