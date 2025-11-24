@@ -6,17 +6,19 @@ In this SBA, api requests are made using async and await to demonstrate appropri
 
 
 ## Running the program
-To view this SBA, run dist/main.js. The current version of this SBA makes an api request
+To view this SBA, run dist/main.js. View the console log to see a list of 30 products. 
 <br>
 
 <br>
 
 ## Reflection Questions
 > How you implemented TypeScript features and OOP principles.
-TypeScript was used to type guards to specify the expected data types for fetched data.
 
-Responses from the api are treated as objects
-
+TypeScript was used to type guards to specify the expected data types for fetched data. This allowed for better troubleshooting, and the IDE can identify a type error immediately.
+<br>
+Responses from the api are treated as objects, and must be converted into a custom class with unique methods to fit the project. Error objects can also be customized, allowing for conditional error responses.
+<br>
+The files are modular, exporting and importing the necessary components from other files.
 <br>
 
 <br>
@@ -37,8 +39,10 @@ Product.ts methods did not return a type. All methods in Product.ts now have ret
 
 > How you handled asynchronous operations and error management.
 
-
+In order for main.js to function, a promise must be returned from apiServices.js. This prevents main.js from running code on an object which has not been defined yet.
 <br>
-
+apiServices.ts also uses await, waiting to extract the needed product data until the Response object has been retrieved.
+<br>
+Two custom error classes were defined, NetworkError (failed api response) and DataError (retrieved data value is invalid). In the event a different error occurs, a generic error response is given in the catch block.
 <br>
 

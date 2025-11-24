@@ -12,13 +12,13 @@ export const contactApi = async (): Promise<Product[]> => {
         }
 
         let data = await response.json()
-        let objectArray = data.products
+        let objectArray = data.products // the array of objects from the api
 
         for (let i = 0; i < objectArray.length; i++) {
-            if (objectArray[i].price < 0 || objectArray[i].discountPercentage < 0 || objectArray[i].discountPercentage >= 100){  // data error condition
+            if (objectArray[i].price < 0 || objectArray[i].discountPercentage < 0 || objectArray[i].discountPercentage >= 100) {  // data error condition
                 throw new DataError('Data must have value greater than 0')
             }
-            productArray[i] = new Product(
+            productArray[i] = new Product( // construct a new array of Product objects
                 objectArray[i].id,
                 objectArray[i].title,
                 objectArray[i].description,
