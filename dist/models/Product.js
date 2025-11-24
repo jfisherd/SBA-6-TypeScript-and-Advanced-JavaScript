@@ -31,18 +31,23 @@ export class Product {
         this.sku = sku;
     }
     displayDetails() {
-        console.log(`
-            Item: ${this.title}
-            Item ID: ${this.id}
-            Item SKU: ${this.sku}
-            Description: ${this.description}
-            Category: ${this.category}
-            Retail Price ($): ${this.price}
-            Your Price: $${this.getPriceWithDiscount()}(-${this.discountPercentage}%)
-            Your Savings: $${this.price - this.getPriceWithDiscount()}
-            Tax: $${this.price - this.getPriceWithTax()}
-            Final Price: $${this.getPriceWithTax}
-            `);
+        return `
+        Item: ${this.title}
+        Item ID: ${this.id}
+        Item SKU: ${this.sku}
+        
+        Category: ${this.category}
+        
+        Description: ${this.description}
+
+        Retail Price ($):   $${Math.round(this.price * 100) / 100}
+        Your Price:         $${Math.round(this.getPriceWithDiscount() * 100) / 100}(-${this.discountPercentage}%)
+        Your Savings:       $${Math.round((this.price - this.getPriceWithDiscount()) * 100) / 100}
+        Tax:                $${Math.round((this.price - this.getPriceWithTax()) * 100) / 100}
+        Final Price:        $${Math.round(this.getPriceWithTax() * 100) / 100}
+        
+        
+        `;
     }
     getPriceWithDiscount() {
         return this.price - calculateDiscount(this);

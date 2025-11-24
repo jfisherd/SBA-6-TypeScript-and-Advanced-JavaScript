@@ -1,7 +1,6 @@
 import { Product } from "../models/Product.js"
 import { NetworkError } from "../utils/errorHandler.js"
 import { DataError } from "../utils/errorHandler.js"
-// import { productArray } from "../main.js"
 
 export const contactApi = async (): Promise<Product[]> => {
     let productArray: Product[] = [] // initialize the empty array to be returned
