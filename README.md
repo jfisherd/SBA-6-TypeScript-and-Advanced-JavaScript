@@ -1,23 +1,22 @@
-
-
-
 # SBA 6, TypeScript and Advanced JavaScript
 
 ## Description
-In this SBA, 
+In this SBA, api requests are made using async and await to demonstrate appropriate use of TypeScript and Advanced JavaScript concepts.
 <br>
 
 
 ## Running the program
-To view this SBA, run dist/main.js
+To view this SBA, run dist/main.js. The current version of this SBA makes an api request
 <br>
 
 <br>
 
 ## Reflection Questions
 > How you implemented TypeScript features and OOP principles.
+TypeScript was used to type guards to specify the expected data types for fetched data.
 
-T
+Responses from the api are treated as objects
+
 <br>
 
 <br>
@@ -35,6 +34,8 @@ Tax amount after discount. Changed taxCalculator.ts to handle discounted prices 
 
 > How you handled asynchronous operations and error management.
 
-A
+
+<br>
+
 <br>
 

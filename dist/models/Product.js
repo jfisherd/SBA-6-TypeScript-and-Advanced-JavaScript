@@ -1,16 +1,15 @@
 import { calculateDiscount } from "../utils/discountCalculator.js";
 import { calculateTax } from "../utils/taxCalculator.js";
-
 export class Product {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    price: number;
-    discountPercentage: number;
+    id;
+    title;
+    description;
+    category;
+    price;
+    discountPercentage;
     // stock: number;
     // tags: [];
-    sku: string;
+    sku;
     // weight: number;
     // dimensions: object;
     // warrantyInformation: string;
@@ -22,8 +21,7 @@ export class Product {
     // meta: object;
     // images: [];
     // thumbnail: string;
-
-    constructor(id: number, title: string, description: string, category: string, price: number, discountPercentage: number, sku: string) {
+    constructor(id, title, description, category, price, discountPercentage, sku) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -32,7 +30,6 @@ export class Product {
         this.discountPercentage = discountPercentage;
         this.sku = sku;
     }
-
     displayDetails() {
         console.log(`
             Item: ${this.title}
@@ -42,18 +39,16 @@ export class Product {
             Category: ${this.category}
             Retail Price ($): ${this.price}
             Your Price: $${this.getPriceWithDiscount()}(-${this.discountPercentage}%)
-            Your Savings: $${this.price-this.getPriceWithDiscount()}
-            Tax: $${this.price-this.getPriceWithTax()}
+            Your Savings: $${this.price - this.getPriceWithDiscount()}
+            Tax: $${this.price - this.getPriceWithTax()}
             Final Price: $${this.getPriceWithTax}
-            `)
+            `);
     }
-
     getPriceWithDiscount() {
-        return this.price - calculateDiscount(this)
+        return this.price - calculateDiscount(this);
     }
-
     getPriceWithTax() {
-        return this.getPriceWithDiscount() + calculateTax(this)
+        return this.getPriceWithDiscount() + calculateTax(this);
     }
 }
-
+//# sourceMappingURL=Product.js.map
