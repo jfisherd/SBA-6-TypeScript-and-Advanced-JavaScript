@@ -1,0 +1,25 @@
+{
+  "name": "e-commerce-system",
+  "version": "1.0.0",
+  "description": "In this lab,   \r <br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfisherd/SBA-6-TypeScript-and-Advanced-JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfisherd/SBA-6-TypeScript-and-Advanced-JavaScript/issues"
+  },
+  "homepage": "https://github.com/jfisherd/SBA-6-TypeScript-and-Advanced-JavaScript#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
