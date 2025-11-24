@@ -20,6 +20,8 @@ To view this SBA, run dist/main.js
 T
 <br>
 
+<br>
+
 > The challenges you encountered and how you overcame them.
 
 Returning tax or discount calculation to 2 decimals. By using TypeScript, I specified the return must be a number. The .toFixed(2) method returns a string, and required a parseFloat() wrapper to return the expected data type. 

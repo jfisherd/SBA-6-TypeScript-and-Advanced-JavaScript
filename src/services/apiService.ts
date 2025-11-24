@@ -3,7 +3,7 @@ import { NetworkError } from "../utils/errorHandler.js"
 import { DataError } from "../utils/errorHandler.js"
 
 export const contactApi = () => {
-    let fetchProductData = async (): Promise<Product[] | Error> => {
+    let fetchProductData = async (): Promise<Product[]> => {
         try {
             let productArray: Product[] = []
 
@@ -26,20 +26,21 @@ export const contactApi = () => {
                     objectArray[i].discountPercentage,
                     objectArray[i].sku
                 )
+                productArray[i]?.displayDetails
             }
-
             return productArray
         }
         catch (error) {
             if (error instanceof DataError) {
                 console.error('A data error has occurred: ', error)
             } else if (error instanceof NetworkError) {
-                console.error('A data error has occurred: ', error)
+                console.error('A network error has occurred: ', error)
             } else {
                 console.error('An unexpected has occurred: ', error)
             }
-            return new Error('error')
+            return []
         }
     }
+    return fetchProductData
 }
 

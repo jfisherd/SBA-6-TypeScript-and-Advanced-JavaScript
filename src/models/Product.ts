@@ -53,7 +53,7 @@ export class Product {
     }
 
     getPriceWithTax() {
-        return this.price - calculateDiscount(this) + calculateTax(this)
+        return this.getPriceWithDiscount() + calculateTax(this)
     }
 }
 
