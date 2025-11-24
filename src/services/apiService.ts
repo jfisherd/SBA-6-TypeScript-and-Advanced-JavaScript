@@ -11,6 +11,19 @@ export const contactApi = async (): Promise<Product[]> => {
             throw new NetworkError('Failed to receive a response from the API') 
         }
 
+        if (Math.random()<0.2) {
+            throw new NetworkError('Failed to receive a response from the API') // throw a random NetworkError to debug
+        }
+
+        if (Math.random()<0.2) {
+            throw new DataError('A data error has occurred, invalid value') // throw a random NetworkError to debug
+        }
+
+        if (Math.random()<0.2) {
+            throw new Error('An unexpected error has occurred') // throw a random NetworkError to debug
+        }
+        
+
         let data = await response.json()
         let objectArray = data.products // the array of objects from the api
 

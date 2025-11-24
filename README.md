@@ -43,6 +43,6 @@ In order for main.js to function, a promise must be returned from apiServices.js
 <br>
 apiServices.ts also uses await, waiting to extract the needed product data until the Response object has been retrieved.
 <br>
-Two custom error classes were defined, NetworkError (failed api response) and DataError (retrieved data value is invalid). In the event a different error occurs, a generic error response is given in the catch block.
+Two custom error classes were defined, NetworkError (failed api response) and DataError (retrieved data value is invalid). In the event a different error occurs, a generic error response is given in the catch block. Random errors thrown to simulate the an error about 50% of the time
 <br>
 
