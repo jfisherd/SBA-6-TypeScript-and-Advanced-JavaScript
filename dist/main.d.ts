@@ -1,3 +1,2 @@
-import { Product } from './models/Product.js';
-export declare let productArray: Product[];
+export {};
 //# sourceMappingURL=main.d.ts.map

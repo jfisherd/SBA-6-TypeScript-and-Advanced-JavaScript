@@ -1,8 +1,9 @@
 import { Product } from "../models/Product.js";
 import { NetworkError } from "../utils/errorHandler.js";
 import { DataError } from "../utils/errorHandler.js";
-import { productArray } from "../main.js";
+// import { productArray } from "../main.js"
 export const contactApi = async () => {
+    let productArray = [];
     try {
         let response = await fetch('https://dummyjson.com/products/');
         if (!response.ok) {

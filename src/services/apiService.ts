@@ -4,20 +4,21 @@ import { DataError } from "../utils/errorHandler.js"
 // import { productArray } from "../main.js"
 
 export const contactApi = async (): Promise<Product[]> => {
-    let productArray: Product[] = []
+    let productArray: Product[] = [] // initialize the empty array to be returned
     try {
+        let response = await fetch('https://dummyjson.com/products/') // request the api
 
-        let response = await fetch('https://dummyjson.com/products/')
-
-        if (!response.ok) {
-            throw new NetworkError('Failed to receive a response from the API')
+        if (!response.ok) { // network error condition
+            throw new NetworkError('Failed to receive a response from the API') 
         }
 
         let data = await response.json()
-
         let objectArray = data.products
-        // console.log(objectArray)
+
         for (let i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].price < 0 || objectArray[i].discountPercentage < 0 || objectArray[i].discountPercentage >= 100){  // data error condition
+                throw new DataError('Data must have value greater than 0')
+            }
             productArray[i] = new Product(
                 objectArray[i].id,
                 objectArray[i].title,
@@ -27,7 +28,6 @@ export const contactApi = async (): Promise<Product[]> => {
                 objectArray[i].discountPercentage,
                 objectArray[i].sku
             )
-            // productArray[i]?.displayDetails()
         }
     }
     catch (error) {
